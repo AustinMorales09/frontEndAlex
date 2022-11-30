@@ -1,6 +1,10 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
 
+
+const url = 'https://alexcapstone.adaptable.app/';
+
+
 const Attraction = (props) => (
     <div className='text-center'>
       <h3>{props.attraction.name}</h3>
@@ -17,7 +21,7 @@ export default class AttractionsList extends Component {
         this.state = {attractions: []};  
       }
       componentDidMount() {
-        axios.get('http://localhost:5000/attractions/')
+        axios.get(url + 'attractions/')
          .then(response => {
            this.setState({ attractions: response.data });
          })
